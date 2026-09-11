@@ -1,0 +1,209 @@
+:root {
+    --primary: #1e293b;
+    --accent: #2563eb;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --gold: #f59e0b;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --black: #1e293b;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    padding: 15px;
+    color: #334155;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* Timer Section */
+.timer-card {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 42px;
+    font-weight: 700;
+    font-family: monospace;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+.btn-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-time {
+    background: #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-time.active {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-control {
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-start { background: var(--success); }
+.btn-reset { background: #64748b; }
+
+/* Stats Dashboard */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-label { font-size: 12px; color: #64748b; text-transform: uppercase; }
+.stat-value { font-size: 22px; font-weight: 700; color: var(--primary); }
+
+/* Arrow Settings */
+.arrow-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8fafc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Target Buttons Grid */
+.target-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.btn-score {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Face Target Colors */
+.sc-x, .sc-10, .sc-9 { background: var(--gold); color: #000; }
+.sc-8, .sc-7 { background: var(--red); color: #fff; }
+.sc-6, .sc-5 { background: var(--blue); color: #fff; }
+.sc-4, .sc-3 { background: var(--black); color: #fff; }
+.sc-2, .sc-1 { background: #cbd5e1; color: #000; }
+.sc-m { background: #64748b; color: #fff; border-radius: 8px; }
+
+/* Live Rambahan Info */
+.live-rambahan {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+}
+
+.shots-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+    min-height: 32px;
+}
+
+.shot-bubble {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* History Table */
+.history-section {
+    margin-top: 20px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.history-table th, .history-table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    text-align: center;
+}
+
+.history-table th { background: #f1f5f9; }
+
+.btn-action-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-action {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+}
+.btn-undo { background: #f59e0b; }
+.btn-reset-all { background: var(--danger); }

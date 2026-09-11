@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Skoring Panahan Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🏹 Skor Panahan Premium</h1>
+
+    <!-- Waktu / Timer Section -->
+    <div class="timer-card">
+        <div class="btn-group">
+            <button class="btn-time active" onclick="setTimer(60, this)">1 Menit</button>
+            <button class="btn-time" onclick="setTimer(120, this)">2 Menit</button>
+            <button class="btn-time" onclick="setTimer(240, this)">4 Menit</button>
+        </div>
+        <div class="timer-display" id="timerDisplay">01:00</div>
+        <div class="btn-group">
+            <button class="btn-control btn-start" id="startBtn" onclick="toggleTimer()">Mulai</button>
+            <button class="btn-control btn-reset" onclick="resetTimer()">Reset Waktu</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Statistik Utama -->
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="stat-label">Total Skor</div>
+            <div class="stat-value" id="totalScore">0</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-label">Rambahan</div>
+            <div class="stat-value" id="currentEnd">1</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-label">Total X / 10</div>
+            <div class="stat-value" id="totalX10">0 / 0</div>
+        </div>
+    </div>
+
+    <!-- Pengaturan Jumlah Anak Panah -->
+    <div class="arrow-settings">
+        <span>Anak Panah / Rambahan:</span>
+        <div class="btn-group" style="margin:0;">
+            <button class="btn-time active" onclick="setArrowPerEnd(3, this)">3</button>
+            <button class="btn-time" onclick="setArrowPerEnd(6, this)">6</button>
+            <button class="btn-time" onclick="setArrowPerEnd(9, this)">9</button>
+        </div>
+    </div>
+
+    <!-- Live Rambahan Monitor -->
+    <div class="live-rambahan">
+        <strong>Rambahan Aktif (Skor Sementara: <span id="liveSum">0</span>)</strong>
+        <div class="shots-row" id="liveShotsRow"></div>
+    </div>
+
+    <!-- Tombol Input Nilai Face Target -->
+    <div class="target-grid">
+        <button class="btn-score sc-x" onclick="inputScore('X')">X</button>
+        <button class="btn-score sc-10" onclick="inputScore(10)">10</button>
+        <button class="btn-score sc-9" onclick="inputScore(9)">9</button>
+        <button class="btn-score sc-8" onclick="inputScore(8)">8</button>
+        <button class="btn-score sc-7" onclick="inputScore(7)">7</button>
+        <button class="btn-score sc-6" onclick="inputScore(6)">6</button>
+        <button class="btn-score sc-5" onclick="inputScore(5)">5</button>
+        <button class="btn-score sc-4" onclick="inputScore(4)">4</button>
+        <button class="btn-score sc-3" onclick="inputScore(3)">3</button>
+        <button class="btn-score sc-2" onclick="inputScore(2)">2</button>
+        <button class="btn-score sc-1" onclick="inputScore(1)">1</button>
+        <button class="btn-score sc-m" onclick="inputScore('M')">M</button>
+    </div>
+
+    <!-- Tombol Fitur Manipulasi Data -->
+    <div class="btn-action-group">
+        <button class="btn-action btn-undo" onclick="undoLastShot()">Undo Tembakan</button>
+        <button class="btn-action btn-reset-all" onclick="resetAllData()">Reset Semua</button>
+    </div>
+
+    <!-- Tabel Riwayat Rambahan -->
+    <div class="history-section">
+        <h3>Riwayat Rambahan</h3>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Rambahan</th>
+                    <th>Tembakan</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody">
+                <tr>
+                    <td colspan="3" style="color:#64748b;">Belum ada rambahan selesai</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
